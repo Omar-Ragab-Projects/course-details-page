@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -10,6 +14,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-fade-in: fade-in 0.2s forwards linear;
 }
 
 body {
@@ -26,6 +31,14 @@ body {
 
 @utility flex-between {
   @apply flex items-center justify-between;
+}
+
+@utility left-center {
+  @apply left-1/2 -translate-x-1/2;
+}
+
+@utility top-center {
+  @apply top-1/2 -translate-y-1/2;
 }
 
 .your-progress-tip {
@@ -47,4 +60,13 @@ body {
   position: absolute;
   top: calc(100% + 1.8rem);
   color: #485293;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

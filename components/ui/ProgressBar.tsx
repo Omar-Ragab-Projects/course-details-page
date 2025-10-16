@@ -39,6 +39,7 @@ function ProgressBar({
       return () => window.removeEventListener("scroll", windowScrollHandle);
     } else {
       progressElement.style.width = `${percent}%`;
+      progressTipElement.style.opacity = "100";
     }
   }, []);
 
