@@ -1,6 +1,22 @@
+import { QuestionsTypes } from "@/lib/courseTopics";
 import { handleZero } from "@/utils/helpers";
 import { AlarmClock, ArrowLeft } from "lucide-react";
 import React from "react";
+interface AnswersTypes {
+  questionId: number;
+  answer: string;
+}
+
+interface ExamHeaderProps {
+  quizStarted: boolean;
+  startQuiz: () => void;
+  timeEnd: boolean;
+  retryQuiz: () => void;
+  closePopup: () => void;
+  time: { minutes: number; seconds: number };
+  answers: AnswersTypes[];
+  questions: QuestionsTypes[] | undefined;
+}
 
 function ExamHeader({
   quizStarted,
@@ -11,7 +27,7 @@ function ExamHeader({
   time,
   answers,
   questions,
-}: any) {
+}: ExamHeaderProps) {
   return (
     <>
       {!quizStarted && (

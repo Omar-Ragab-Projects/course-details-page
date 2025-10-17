@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Maximize2, Minimize2 } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 

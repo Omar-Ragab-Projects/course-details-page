@@ -1,7 +1,6 @@
 import comments from "@/lib/comments";
 import React from "react";
 import CourseComment from "./CourseComment";
-import { ArrowRight } from "lucide-react";
 import AddCommentForm from "./AddCommentForm";
 
 function CourseComments() {

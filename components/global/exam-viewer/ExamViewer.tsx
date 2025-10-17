@@ -1,7 +1,5 @@
 "use client";
 import { QuestionsTypes } from "@/lib/courseTopics";
-import { handleZero } from "@/utils/helpers";
-import { AlarmClock, ArrowLeft } from "lucide-react";
 import React, { ChangeEvent, useRef, useState } from "react";
 import ExamHeader from "./ExamHeader";
 import ExamQuestions from "./ExamQuestions";

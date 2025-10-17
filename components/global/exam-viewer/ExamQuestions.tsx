@@ -1,5 +1,14 @@
 import { QuestionsTypes } from "@/lib/courseTopics";
-import React from "react";
+import React, { ChangeEvent } from "react";
+
+interface ExamQuestionsProps {
+  questions: QuestionsTypes[] | undefined;
+  updateActiveQuestion: (index: number) => void;
+  activeQuestion: number;
+  previousActiveQuestion: () => void;
+  nextActiveQuestion: () => void;
+  answersHandle: (e: ChangeEvent<HTMLInputElement>, questionId: number) => void;
+}
 
 function ExamQuestions({
   questions,
@@ -8,7 +17,7 @@ function ExamQuestions({
   previousActiveQuestion,
   nextActiveQuestion,
   answersHandle,
-}: any) {
+}: ExamQuestionsProps) {
   return (
     <div className="bg-[#4056b9]  flex-1 w-full">
       {/* Steps */}
