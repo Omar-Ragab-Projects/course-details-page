@@ -22,13 +22,13 @@ function AskQuestion({ onSuccess }: { onSuccess?: () => void }) {
   };
 
   return (
-    <form onSubmit={askQuestionAction} className="p-4  min-w-[90%]">
+    <form onSubmit={askQuestionAction} className="p-4  min-w-[100%]">
       <textarea
         name=""
         id=""
         aria-multiline
         className="resize-none  shadow-[0_0_8px_rgba(0,0,0,0.1)] block w-[100%] h-40 p-4 rounded-lg mt-4 bg-white"
-        placeholder="Write a comment"
+        placeholder="How can we help you"
         required
       ></textarea>
 

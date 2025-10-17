@@ -3,7 +3,7 @@ import courseTopics, { ContentTypes } from "@/lib/courseTopics";
 import Accordion from "@/components/ui/Accordion";
 import CourseTopicItem from "./CourseTopicItem";
 import PDFViewer from "@/components/ui/PDFViewer";
-import ExamViewer from "@/components/global/ExamViewer";
+import ExamViewer from "@/components/global/exam-viewer/ExamViewer";
 
 function CourseTopicsList() {
   return (

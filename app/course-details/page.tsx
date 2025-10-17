@@ -7,17 +7,19 @@ import CourseQuickIcons from "@/components/pages/course-details/quick-icons/Cour
 
 function CourseDetailsPage() {
   return (
-    <div className="flex justify-center gap-8 container">
-      <div className="flex-1">
-        <CourseVideo />
-        <CourseQuickIcons />
-        <CourseMaterialsSection />
-        <CourseTopics className="lg:hidden" />
-        <CourseComments />
-      </div>
+    <div className="course-parent">
+      <div className="flex justify-center gap-8 container">
+        <div className="left-side-course-details max-w-[799px]">
+          <CourseVideo />
+          <CourseQuickIcons />
+          <CourseMaterialsSection />
+          <CourseTopics className="lg:hidden" />
+          <CourseComments />
+        </div>
 
-      <div className="hidden lg:block flex-1">
-        <CourseTopics className="max-lg:hidden" />
+        <div className="hidden lg:block flex-1">
+          <CourseTopics className="max-lg:hidden" />
+        </div>
       </div>
     </div>
   );

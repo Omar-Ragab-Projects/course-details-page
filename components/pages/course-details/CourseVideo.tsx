@@ -1,9 +1,25 @@
+import { Maximize2, Minimize2 } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
 function CourseVideo() {
   const [showControls, setShowControls] = useState(false);
   const toggleShowControls = () => setShowControls(true);
+  const [isWideMode, setIsWideMode] = useState(false);
   const videoElement = useRef<HTMLVideoElement>(null);
+
+  const toggleWideMode = () => {
+    setIsWideMode(!isWideMode);
+  };
+
+  // useEffect(() => {
+  //   const videoSectionElement = document.querySelector(".video-section");
+  //   const courseParentElement = document.querySelector(".course-parent");
+  //   const leftDetailsElement = document.querySelector(
+  //     ".left-side-course-details"
+  //   );
+
+  //   if (isWideMode) courseParentElement?.appendChild(videoSectionElement);
+  // }, [isWideMode]);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -71,7 +87,7 @@ function CourseVideo() {
   }, []);
 
   return (
-    <section className="container max-lg:flex-center p-2 lg:p-4">
+    <section className="video-section max-lg:flex-center p-2 lg:p-4 sticky top-0 z-20 lg:relative">
       <div className="relative">
         <video
           ref={videoElement}
@@ -82,6 +98,23 @@ function CourseVideo() {
         >
           <source src="/video-sample.mp4" />
         </video>
+
+        <button
+          onClick={toggleWideMode}
+          className="hidden lg:flex absolute top-4 right-4 bg-black/70 hover:bg-black/90 text-white p-2 rounded-lg transition-colors items-center gap-2"
+        >
+          {isWideMode ? (
+            <>
+              <Minimize2 size={20} />
+              <span>Normal</span>
+            </>
+          ) : (
+            <>
+              <Maximize2 size={20} />
+              <span>Wide</span>
+            </>
+          )}
+        </button>
       </div>
     </section>
   );
