@@ -41,20 +41,22 @@ function ExamHeader({
           onClick={closePopup}
           className="text-white w-9 h-9 cursor-pointer hover:text-red-300 "
         />
-        <div className="absolute flex-center  gap-2 left-center top-center bg-[#fbd500] text-white shadow rounded-md shadow-[#fbd500] p-2 px-6">
+        <div className=" flex-center  gap-2  bg-[#fbd500] text-white shadow rounded-md shadow-[#fbd500] p-2 px-6">
           <AlarmClock size={22} />
           <span className="h-7 text-2xl">
             {handleZero(time.minutes)} : {handleZero(time.seconds)}
           </span>
         </div>
 
-        {answers.length == questions?.length && (
+        {answers.length == questions?.length ? (
           <button
             onClick={closePopup}
             className="bg-white px-6 py-2 rounded-lg border border-gray-300 cursor-pointer"
           >
             Submit
           </button>
+        ) : (
+          <span></span>
         )}
       </div>
     </>
