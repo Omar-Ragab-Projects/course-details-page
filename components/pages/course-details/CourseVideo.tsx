@@ -1,25 +1,16 @@
 import { Maximize2, Minimize2 } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
-function CourseVideo() {
+function CourseVideo({
+  isWideMode,
+  toggleWideMode,
+}: {
+  isWideMode: boolean;
+  toggleWideMode: () => void;
+}) {
   const [showControls, setShowControls] = useState(false);
   const toggleShowControls = () => setShowControls(true);
-  const [isWideMode, setIsWideMode] = useState(false);
   const videoElement = useRef<HTMLVideoElement>(null);
-
-  const toggleWideMode = () => {
-    setIsWideMode(!isWideMode);
-  };
-
-  // useEffect(() => {
-  //   const videoSectionElement = document.querySelector(".video-section");
-  //   const courseParentElement = document.querySelector(".course-parent");
-  //   const leftDetailsElement = document.querySelector(
-  //     ".left-side-course-details"
-  //   );
-
-  //   if (isWideMode) courseParentElement?.appendChild(videoSectionElement);
-  // }, [isWideMode]);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -36,29 +27,22 @@ function CourseVideo() {
     const lockOrientation = async () => {
       try {
         if (!screen?.orientation) {
-          console.log("Screen Orientation API not supported on this device");
           return;
         }
 
         const orientation = screen.orientation as any;
 
         if (typeof orientation.lock !== "function") {
-          console.log("Screen orientation lock not supported on this device");
           return;
         }
 
         await orientation.lock("landscape-primary");
-        console.log("Screen locked to landscape");
       } catch (error) {
         if (error instanceof Error) {
           if (error.name === "NotSupportedError") {
-            console.log(
-              "Screen orientation lock is not supported on this device"
-            );
           } else if (error.name === "SecurityError") {
-            console.log("Screen orientation lock blocked by security policy");
           } else {
-            console.warn("Failed to lock screen orientation:", error.message);
+            console.log("Failed to lock screen orientation:", error.message);
           }
         }
       }
@@ -70,7 +54,6 @@ function CourseVideo() {
           const orientation = screen.orientation as any;
           if (typeof orientation.unlock === "function") {
             orientation.unlock();
-            console.log("Screen orientation unlocked");
           }
         }
       } catch (error) {
@@ -80,20 +63,20 @@ function CourseVideo() {
 
     document.addEventListener("fullscreenchange", handleFullscreenChange);
 
-    // Cleanup event listener
     return () => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
     };
   }, []);
 
   return (
-    <section className="video-section max-lg:flex-center p-2 lg:p-4 sticky top-0 z-20 lg:relative">
-      <div className="relative">
+    <section className="  max-lg:flex-center p-2 lg:p-4  top-0 z-20 ">
+      <div className="relative ">
         <video
           ref={videoElement}
           controls={showControls}
           onClick={toggleShowControls}
-          className="w-[424px] h-[306px] lg:w-[799px] lg:h-[500px]  bg-gray-50 cursor-pointer object-contain rounded-lg "
+          className={`w-[424px] h-[306px] lg:w-[799px] lg:h-[500px]  bg-gray-50 cursor-pointer object-contain rounded-lg 
+          ${isWideMode ? "animate-full-width" : ""}`}
           poster="/poster.png"
         >
           <source src="/video-sample.mp4" />

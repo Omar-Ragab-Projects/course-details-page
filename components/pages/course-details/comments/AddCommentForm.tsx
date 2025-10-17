@@ -40,7 +40,7 @@ function AddCommentForm() {
       </button>
 
       {success && (
-        <div className="fixed inset-0 bg-black/80">
+        <div className="fixed inset-0 bg-black/80 z-30">
           <div className=" animate-fade-in flex-center flex-col absolute top-center left-center bg-white p-8 rounded-lg w-[90%] max-w-[400px]  ">
             <MessageSquareShare size={90} className="text-green-500" />
             <span className="font-bold text-green-500">Thank You!</span>

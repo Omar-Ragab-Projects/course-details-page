@@ -21,7 +21,7 @@ function CourseQuickIcons() {
   const closeAskQuestionPopup = () => setAskQuestion(false);
 
   return (
-    <section className="flex-center gap-4 max-lg:mt-4">
+    <section className="flex-center gap-4 pb-2 bg-gray-50 ">
       <Link href={"#curriculum-section"}>
         <Tooltip
           message="Curriculum"

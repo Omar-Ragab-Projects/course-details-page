@@ -13,7 +13,6 @@ function Accordion({ title, children }: AccordionProps) {
 
   useEffect(() => {
     const smallScreen = window.screen.availWidth <= 1024;
-    console.log(window.screen.availWidth);
     if (!smallScreen) {
       setOpen(true);
     }
