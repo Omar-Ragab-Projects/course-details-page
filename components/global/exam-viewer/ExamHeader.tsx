@@ -31,7 +31,7 @@ function ExamHeader({
   return (
     <>
       {!quizStarted && (
-        <div className="fixed h-[90%] bottom-0 w-full bg-white/5 z-20 backdrop-blur">
+        <div className="fixed  h-[90%] bottom-0 w-full bg-white/5 z-20 backdrop-blur">
           <button
             onClick={startQuiz}
             className="bg-[#4056b9] text-white text-xl px-16 py-4 rounded-lg border border-gray-300 cursor-pointer fixed top-center left-center shadow-lg hover:bg-[#364ba7]"
@@ -52,7 +52,7 @@ function ExamHeader({
         </div>
       )}
 
-      <div className="bg-[#4056b9] w-full p-4 relative flex-between">
+      <div className="bg-[#4056b9] sticky top-0 w-full p-4 z-20 flex-between">
         <ArrowLeft
           onClick={closePopup}
           className="text-white w-9 h-9 cursor-pointer hover:text-red-300 "

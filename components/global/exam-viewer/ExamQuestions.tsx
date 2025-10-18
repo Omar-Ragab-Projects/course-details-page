@@ -68,7 +68,7 @@ function ExamQuestions({
         </button>
       </div>
       <ul
-        className="h-[96%] flex justify-center gap-4 mt-4 absolute left-12 transition-all"
+        className="h-auto flex justify-center gap-4 mt-4 absolute left-12 transition-all"
         style={{
           transform: `translateX(-${20 * activeQuestion}%)`,
         }}

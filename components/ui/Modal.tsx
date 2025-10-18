@@ -15,7 +15,7 @@ function Modal({ trigger, children, className = "" }: any) {
         <div
           className={`modal-open animate-fade-in fixed block inset-0 bg-black/85  overflow-y-auto  z-30 ${className}`}
         >
-          <div className="bg-[#41b69d] w-full p-4">
+          <div className="bg-[#41b69d] w-full p-4 sticky top-0 z-20">
             <ArrowLeft
               onClick={closeModal}
               className="text-white w-9 h-9 cursor-pointer hover:text-red-100 "
