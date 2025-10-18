@@ -113,7 +113,7 @@ function ExamViewer({
       <div onClick={openPopup}>{children}</div>
       {isOpen && (
         <>
-          <div className="modal-open animate-fade-in fixed  inset-0 bg-black/85 flex-center flex-col z-30">
+          <div className="modal-open animate-fade-in fixed top-0 left-0 w-full h-full bg-[#4056b9] block overflow-x-hidden overflow-y-auto z-30">
             <ExamHeader
               time={time}
               quizStarted={quizStarted}

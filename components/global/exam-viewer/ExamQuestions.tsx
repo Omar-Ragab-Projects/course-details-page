@@ -19,7 +19,7 @@ function ExamQuestions({
   answersHandle,
 }: ExamQuestionsProps) {
   return (
-    <div className="bg-[#4056b9]  flex-1 w-full">
+    <div className="bg-[#4056b9]  flex-1 w-full h-full">
       {/* Steps */}
       <ul className=" flex justify-center gap-4 pt-16">
         {questions &&
@@ -68,7 +68,7 @@ function ExamQuestions({
         </button>
       </div>
       <ul
-        className="h-[68%] flex justify-center gap-4 mt-4 absolute left-12 transition-all"
+        className="h-[96%] flex justify-center gap-4 mt-4 absolute left-12 transition-all"
         style={{
           transform: `translateX(-${20 * activeQuestion}%)`,
         }}

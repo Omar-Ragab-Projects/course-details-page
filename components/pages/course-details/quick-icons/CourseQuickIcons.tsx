@@ -61,6 +61,7 @@ function CourseQuickIcons() {
       </Popup>
 
       <Modal
+        className="bg-white"
         trigger={
           <Tooltip
             message="Leaderboard"
